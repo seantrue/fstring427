@@ -1,5 +1,5 @@
 # fstring427
-Python 3.6 f-string sympath (partial compatibility) module for Python 2.7
+Python 3.6 f-string sympathy (partial compatibility) module for Python 2.7
 See https://www.python.org/dev/peps/pep-0498/ for the specification for _Literal String Interpolation_.
 
 

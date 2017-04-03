@@ -48,7 +48,8 @@ The underlying implementation is a subclass of the Python 2.7 Format class, and 
 
  which has the additional convenience of a temporary scope for kwargs
 
- ```>>> printf('He said his name is {name!r}', name="Sam")
+```
+ >>> printf('He said his name is {name!r}', name="Sam")
 He said his name is 'Sam'
 ```
 

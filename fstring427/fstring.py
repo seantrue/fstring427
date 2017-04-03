@@ -1,3 +1,4 @@
+# Copyright (c) 2017 Smartvid.io
 """String formatter this is similar to that found in: https://www.python.org/dev/peps/pep-0498/"""
 import sys
 import inspect

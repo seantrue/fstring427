@@ -70,3 +70,5 @@ printf("{d[a]")
 
 prints `string` (Python 2.7 .format() behavior) instead of `int` (Python 3.6 f-string behavior). I've found this a small price to pay
 in my 2.7 code to get cleaner printing and string formatting.
+
+_Copyright 2017, Smartvid.io_

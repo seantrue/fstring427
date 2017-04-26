@@ -1,5 +1,7 @@
 # From https://www.python.org/dev/peps/pep-0498/#examples-from-python-s-source-code
 from fstring427.fstring import f, printf
+import fstring427.flogging as logging
+
 def examples_from_python():
     class Extra(object):
         def __init__(self):
@@ -34,7 +36,28 @@ def examples_from_python():
     for i in range(10):
         s = str(f("{i*10}"))
 
+def logging_examples():
+    logger = logging.getLogger()
+    formatter = logging.Formatter('%(asctime)s %(name)-12s %(levelname)-8s %(message)s')
+    handler = logging.StreamHandler()
+    handler.setFormatter(formatter)
+    logger.addHandler(handler)
+    for i in range(10):
+        logger.warning("i={i*10}")
+
+    class Bar(object):
+        def __init__(self, *args, **kwargs):
+            super(Bar, self).__init__()
+        def test(self,a,b,c):
+            self.error("a={a} {b}*{c}={b*c}")
+
+    class Foo(Bar, logging.Flogging):
+        pass
+    
+    foo = Foo()
+    foo.test("alpha", 10, 20)
 if __name__ == "__main__":
     import sys
     examples_from_python()
+    logging_examples()
     f.showstat(stream=sys.stdout)

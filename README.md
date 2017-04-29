@@ -76,5 +76,9 @@ in my 2.7 code to get cleaner printing and string formatting.
 * Add `printf()` style logging module
 * Contemplate 2-3 port for printf() utility function (dealing with the kwargs scope)
 
+## Similar functionality
+
+* https://github.com/damnever/fmt
+* https://pypi.org/project/fstrings/
 
 _Copyright 2017, Smartvid.io_

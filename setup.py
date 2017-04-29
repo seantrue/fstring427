@@ -3,6 +3,7 @@ from codecs import open
 
 try:
     from pypandoc import convert
+
     read_md = lambda f: convert(f, 'rst')
 except ImportError:
     print("warning: pypandoc module not found, could not convert Markdown to RST")
@@ -10,8 +11,8 @@ except ImportError:
 
 setup(
     name='fstring427',
-    version='1.0.0',
-    description='Python 3.6 f-strings sympathy for  Python 2.7',
+    version='0.9.9',
+    description='Python 3.6 f-strings sympathy for  Python 2.7. Now, with printf()',
     long_description=read_md('README.md'),
     url='https://github.com/smartvid-io/fstring427',
     author='Sean True',

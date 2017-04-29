@@ -78,7 +78,7 @@ class Fmt(Formatter):
                         used_args.add(arg_used)
                     except:
                         compiled = self._compile_field(field_name)
-                        obj = eval(compiled,frame.f_globals,d)
+                        obj = eval(compiled, frame.f_globals, d)
                     obj = self.convert_field(obj, conversion)
                     format_spec = self._vformat(format_spec, args, d,
                                                 used_args, 1)
@@ -93,7 +93,8 @@ class Fmt(Formatter):
         if stream is None:
             stream = sys.stderr
         ncached = len(cls._parsed_cache)
-        print >> stream, "Fmt: calls={cls.calls} hits={cls.hits} misses={cls.misses} compile_hits={cls.c_hits} compile_misses={cls.c_misses}".format(**locals())
+        print >> stream, "Fmt: calls={cls.calls} hits={cls.hits} misses={cls.misses} compile_hits={cls.c_hits} compile_misses={cls.c_misses}".format(
+            **locals())
 
     def __str__(self):
         return self(__lookback=2)
@@ -101,13 +102,17 @@ class Fmt(Formatter):
     # Can also evaluate with `fmt`
     __repr__ = __str__
 
+
 f = Fmt
+
 
 def printf(*args, **kwargs):
     if not 1 <= len(args) <= 2:
         raise RuntimeError("printf needs a format string")
+
     def like_file(obj):
         return hasattr(obj, "write")
+
     outf = sys.stdout
     if kwargs.has_key("file") and like_file(kwargs["file"]):
         format_string = args[0]
@@ -120,5 +125,4 @@ def printf(*args, **kwargs):
         outf = args[0]
         format_string = args[1]
     f = Fmt(format_string)
-    print >>outf, f(__lookback=2,**kwargs)
-
+    print >> outf, f(__lookback=2, **kwargs)

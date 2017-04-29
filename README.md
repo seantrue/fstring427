@@ -53,7 +53,7 @@ The underlying implementation is a subclass of the Python 2.7 Format class, and 
 He said his name is 'Sam'
 ```
 
-## Major incompatibilities:
+## Major incompatibilities
 
 Python 3.6 f-strings were carefully designed, and cover edge cases that .format() does not, see
 https://mail.python.org/pipermail/python-ideas/2015-July/034726.html
@@ -70,5 +70,11 @@ printf("{d[a]")
 
 prints `string` (Python 2.7 .format() behavior) instead of `int` (Python 3.6 f-string behavior). I've found this a small price to pay
 in my 2.7 code to get cleaner printing and string formatting.
+
+## Roadmap
+
+* Add `printf()` style logging module
+* Contemplate 2-3 port for printf() utility function (dealing with the kwargs scope)
+
 
 _Copyright 2017, Smartvid.io_
